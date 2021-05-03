@@ -9,7 +9,9 @@ function App() {
   return (
     <div style={divStyle}>
       <h1>Hello world!</h1>
-      <Car />
+      <Car name={"Audi A8"} year={2018} />
+      <Car name={"Ford Focus"} year={2020} />
+      <Car name={"Mazda"} year={2016} />
     </div>
   );
 }
