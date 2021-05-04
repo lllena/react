@@ -1,16 +1,8 @@
 import React from "react";
+import "./Car.css";
 
 export default (props) => (
-  <div
-    style={{
-      border: "1px solid #ccc",
-      marginBottom: "10px",
-      display: "block",
-      padding: "10px",
-      boxShadow: "3px 5px 3px #eee",
-      borderRadius: "5px",
-    }}
-  >
+  <div className="Car">
     <h3>Car name: {props.name}</h3>
     <p>
       Year: <strong>{props.year}</strong>
