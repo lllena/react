@@ -3,15 +3,19 @@ import "./App.css";
 import Car from "./Car/Car";
 
 class App extends Component {
-  state = {
-    cars: [
-      { name: "Audi A8", year: 2018 },
-      { name: "Ford Focus", year: 2020 },
-      { name: "Mazda 6", year: 2016 },
-    ],
-    pageTitle: "React components",
-    showCars: false,
-  };
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      cars: [
+        { name: "Audi A8", year: 2018 },
+        { name: "Ford Focus", year: 2020 },
+        { name: "Mazda 6", year: 2016 },
+      ],
+      pageTitle: "React components",
+      showCars: false,
+    };
+  }
 
   onChangeName(name, index) {
     const car = this.state.cars[index];
@@ -34,7 +38,16 @@ class App extends Component {
     this.setState({ cars });
   }
 
+  componentWillMount() {
+    console.log("app component will mount");
+  }
+
+  componentDidMount() {
+    console.log("app component did mount");
+  }
+
   render() {
+    console.log("render");
     const divStyle = {
       textAlign: "center",
     };
