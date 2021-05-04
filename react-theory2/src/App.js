@@ -7,7 +7,7 @@ class App extends Component {
     cars: [
       { name: "Audi A8", year: 2018 },
       { name: "Ford Focus", year: 2020 },
-      { name: "Mazda", year: 2016 },
+      { name: "Mazda 6", year: 2016 },
     ],
     pageTitle: "React components",
     showCars: false,
