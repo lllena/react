@@ -24,7 +24,7 @@ class Car extends Component {
 
   render() {
     console.log("Car render");
-    const inputClasses = ["input"];
+    const inputClasses = [classes.input];
 
     if (this.props.name !== "") {
       inputClasses.push("green");

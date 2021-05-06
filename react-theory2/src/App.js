@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import "./App.css";
 import Car from "./Car/Car";
 import ErrorBoundary from "./ErrorBoundary/ErrorBoundary.js";
+import Counter from "./Counter/Counter";
 
 class App extends Component {
   constructor(props) {
@@ -11,8 +12,8 @@ class App extends Component {
     this.state = {
       cars: [
         { name: "Audi A8", year: 2018 },
-        { name: "Ford Focus", year: 2020 },
-        { name: "Mazda 6", year: 2016 },
+        // { name: "Ford Focus", year: 2020 },
+        // { name: "Mazda 6", year: 2016 },
       ],
       pageTitle: "React components",
       showCars: false,
@@ -51,9 +52,6 @@ class App extends Component {
   render() {
     console.log("render");
 
-    if (Math.random() > 0.7) {
-      throw new Error("car random failed");
-    }
     const divStyle = {
       textAlign: "center",
     };
@@ -79,6 +77,8 @@ class App extends Component {
     return (
       <div style={divStyle}>
         <h1>{this.props.title}</h1>
+        <Counter />
+        <hr/>
         <button onClick={this.togleCarsHandler}>Toggle cars</button>
         <div style={{ width: "400px", margin: "auto", padding: "20px" }}>
           {cars}
