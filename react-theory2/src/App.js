@@ -4,11 +4,14 @@ import Car from "./Car/Car";
 import ErrorBoundary from "./ErrorBoundary/ErrorBoundary.js";
 import Counter from "./Counter/Counter";
 
+export const ClickedContext = React.createContext(false);
+
 class App extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
+      clicked: false,
       cars: [
         { name: "Audi A8", year: 2018 },
         { name: "Ford Focus", year: 2020 },
@@ -66,9 +69,18 @@ class App extends Component {
     return (
       <div style={divStyle}>
         <h1>{this.props.title}</h1>
-        <Counter />
+        <ClickedContext.Provider value={this.state.clicked}>
+          <Counter />
+        </ClickedContext.Provider>
         <hr />
         <button onClick={this.toggleCarsHandler}>Toggle cars</button>
+        <button
+          onClick={() => {
+            this.setState({ clicked: true });
+          }}
+        >
+          Change clicked
+        </button>
         <div style={{ width: "400px", margin: "auto", padding: "20px" }}>
           {cars}
         </div>
