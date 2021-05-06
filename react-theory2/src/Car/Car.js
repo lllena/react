@@ -23,7 +23,6 @@ class Car extends React.Component {
     } else {
       inputClasses.push("red");
     }
-
     if (this.props.name.length > 4) {
       inputClasses.push("bold");
     }

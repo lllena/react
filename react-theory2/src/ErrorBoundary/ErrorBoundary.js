@@ -8,6 +8,7 @@ export default class ErrorBoundary extends React.Component {
   componentDidCatch(error, info) {
     this.setState({ hasError: true });
   }
+  
   render() {
     if (this.state.hasError) {
       return <h1 style={{ color: "red" }}>Something went wrong</h1>;

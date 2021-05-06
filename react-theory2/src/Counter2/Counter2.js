@@ -1,7 +1,7 @@
 import React from "react";
 import { ClickedContext } from "../App";
 
-export default (props) => {
+export default () => {
   return (
     <div
       style={{
