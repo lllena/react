@@ -6,14 +6,13 @@ import Counter from "./Counter/Counter";
 
 class App extends Component {
   constructor(props) {
-    console.log("app constructor");
     super(props);
 
     this.state = {
       cars: [
         { name: "Audi A8", year: 2018 },
-        // { name: "Ford Focus", year: 2020 },
-        // { name: "Mazda 6", year: 2016 },
+        { name: "Ford Focus", year: 2020 },
+        { name: "Mazda 6", year: 2016 },
       ],
       pageTitle: "React components",
       showCars: false,
@@ -28,30 +27,19 @@ class App extends Component {
     this.setState({ cars });
   }
 
-  togleCarsHandler = () => {
+  toggleCarsHandler = () => {
     this.setState({
       showCars: !this.state.showCars,
     });
   };
 
   deleteHandler(index) {
-    console.log("delete!");
     const cars = this.state.cars.concat();
     cars.splice(index, 1);
     this.setState({ cars });
   }
 
-  componentWillUnmount() {
-    console.log("app component will mount");
-  }
-
-  componentDidMount() {
-    console.log("app component did mount");
-  }
-
   render() {
-    console.log("render");
-
     const divStyle = {
       textAlign: "center",
     };
@@ -78,8 +66,8 @@ class App extends Component {
       <div style={divStyle}>
         <h1>{this.props.title}</h1>
         <Counter />
-        <hr/>
-        <button onClick={this.togleCarsHandler}>Toggle cars</button>
+        <hr />
+        <button onClick={this.toggleCarsHandler}>Toggle cars</button>
         <div style={{ width: "400px", margin: "auto", padding: "20px" }}>
           {cars}
         </div>
