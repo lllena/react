@@ -31,9 +31,10 @@ const FinishedQuiz = (props) => {
         Сorrect {successCount} out of {props.quiz.length}
       </p>
       <div>
-        <Button onClick={props.onRetry} type="success">
+        <Button onClick={props.onRetry} type="primary">
           Repeat
         </Button>
+        <Button type="success">Exit to list Quiz</Button>
       </div>
     </div>
   );
