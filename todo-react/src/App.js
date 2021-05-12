@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from "react";
 import "./App.css";
-import AddTodo from "./todo/AddTodo";
 import Context from "./todo/context";
 import TodoList from "./todo/TodoList";
 import Loader from "./Loader";
+
+const AddTodo = React.lazy(() => import("./todo/AddTodo"));
 
 function App() {
   const [todos, setTodos] = useState([]);
@@ -51,7 +52,9 @@ function App() {
     <Context.Provider value={{ removeTodo }}>
       <div className="wrapper">
         <h1>Todo React</h1>
-        <AddTodo onCreate={addTodo} />
+        <React.Suspense fallback={<p>Loading...</p>}>
+          <AddTodo onCreate={addTodo} />
+        </React.Suspense>
         {loading && <Loader />}
         {todos.length ? (
           <TodoList todos={todos} onToggle={toggleTodo} />
