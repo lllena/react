@@ -3,6 +3,7 @@ import "./App.css";
 import Context from "./todo/context";
 import TodoList from "./todo/TodoList";
 import Loader from "./Loader";
+import Modal from "./modal/Modal";
 
 const AddTodo = React.lazy(() => import("./todo/AddTodo"));
 
@@ -14,10 +15,8 @@ function App() {
     fetch("https://jsonplaceholder.typicode.com/todos?_limit=5")
       .then((response) => response.json())
       .then((todos) => {
-        setTimeout(() => {
-          setTodos(todos);
-          setLoading(false);
-        }, 2000);
+        setTodos(todos);
+        setLoading(false);
       });
   }, []);
 
@@ -52,6 +51,7 @@ function App() {
     <Context.Provider value={{ removeTodo }}>
       <div className="wrapper">
         <h1>Todo React</h1>
+        <Modal />
         <React.Suspense fallback={<p>Loading...</p>}>
           <AddTodo onCreate={addTodo} />
         </React.Suspense>
