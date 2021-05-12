@@ -1,6 +1,5 @@
 import React, { useContext, useEffect, Fragment } from "react";
 import { Link } from "react-router-dom";
-import { Repos } from "../components/Repos";
 import { GithubContext } from "../context/github/githubContext";
 
 export const Profile = ({ match }) => {
@@ -51,7 +50,12 @@ export const Profile = ({ match }) => {
                   <p>{bio}</p>
                 </Fragment>
               )}
-              <a href={html_url} target="_blank" className="btn btn-dark">
+              <a
+                href={html_url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn btn-dark"
+              >
                 Open profile
               </a>
               <ul>
@@ -83,8 +87,7 @@ export const Profile = ({ match }) => {
           </div>
         </div>
       </div>
-
-      <Repos  repos={repos}/>
+      {repos.join(" ")}
     </Fragment>
   );
 };

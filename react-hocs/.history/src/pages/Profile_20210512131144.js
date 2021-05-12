@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, Fragment } from "react";
 import { Link } from "react-router-dom";
-import { Repos } from "../components/Repos";
+import { Repos } from "../components/repos";
 import { GithubContext } from "../context/github/githubContext";
 
 export const Profile = ({ match }) => {
@@ -83,8 +83,8 @@ export const Profile = ({ match }) => {
           </div>
         </div>
       </div>
-
-      <Repos  repos={repos}/>
+      {repos.join(' ')}
+      <Repos  repos={re}
     </Fragment>
   );
 };

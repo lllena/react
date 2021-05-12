@@ -30,6 +30,7 @@ export const Profile = ({ match }) => {
     public_repos,
     public_gists,
   } = user;
+  console.loading
 
   return (
     <Fragment>

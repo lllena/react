@@ -1,6 +1,5 @@
 import React, { useContext, useEffect, Fragment } from "react";
 import { Link } from "react-router-dom";
-import { Repos } from "../components/Repos";
 import { GithubContext } from "../context/github/githubContext";
 
 export const Profile = ({ match }) => {
@@ -75,16 +74,16 @@ export const Profile = ({ match }) => {
                 )}
               </ul>
 
-              <div className="badge bg-primary">Followers: {followers}</div>
-              <div className="badge bg-success">Following: {following}</div>
-              <div className="badge bg-info">Repositories: {public_repos}</div>
-              <div className="badge bg-dark">Gists: {public_gists}</div>
+              <div className=" bg-primary">Followers: {followers}</div>
+              <div className=" bg-success">Following: {following}</div>
+              <div className=" badge-info">
+                Repositories: {public_repos}
+              </div>
+              <div className="badge badge-dark">Gists: {public_gists}</div>
             </div>
           </div>
         </div>
       </div>
-
-      <Repos  repos={repos}/>
     </Fragment>
   );
 };
