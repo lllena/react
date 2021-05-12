@@ -13,11 +13,13 @@ export const Home = () => {
         {loading ? (
           <p className="text-canter">Loading...</p>
         ) : (
-          users.map((user) => (
-            <div className="col-sm-4 mb-4" key={user.id}>
-              <Card user={user} />
-            </div>
-          ))
+          users.map((user) => {
+            return (
+              <div className="col-sm-4 mb-4" key={card}>
+                <Card />
+              </div>
+            );
+          })
         )}
       </div>
     </React.Fragment>

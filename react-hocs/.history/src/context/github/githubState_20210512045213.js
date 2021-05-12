@@ -47,19 +47,17 @@ export const GithubState = ({ children }) => {
 
     dispatch({
       type: GET_USER,
-      payload: response.data,
+      payload: {},
     });
   };
 
   const getRepos = async (name) => {
     setLoading();
-    const response = await axios.get(
-      withCreds(`https://api.github.com/users/${name}/repos?per_page=5&`)
-    );
+    //..
 
     dispatch({
       type: GET_REPOS,
-      payload: response.data,
+      payload: [],
     });
   };
 
@@ -79,17 +77,7 @@ export const GithubState = ({ children }) => {
 
   return (
     <GithubContext.Provider
-      value={{
-        setLoading,
-        search,
-        getUser,
-        getRepos,
-        clearUsers,
-        user,
-        users,
-        repos,
-        loading,
-      }}
+      value={{ setLoading, search, getUser, getRepos, clearUsers }}
     >
       {children}
     </GithubContext.Provider>

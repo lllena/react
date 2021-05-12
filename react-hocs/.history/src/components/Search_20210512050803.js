@@ -13,10 +13,9 @@ export const Search = () => {
     }
     github.clearUsers();
     if (value.trim()) {
-      alert.hide();
       github.search(value.trim());
     } else {
-      alert.show("Enter date user!");
+      show("Enter date user!");
     }
   };
 
