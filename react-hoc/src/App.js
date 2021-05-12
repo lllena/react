@@ -1,10 +1,10 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useContext } from "react";
 
 function App() {
-
+  
   return (
-    <div>
-      
+    <div className='container'>
+     
     </div>
   );
 }
