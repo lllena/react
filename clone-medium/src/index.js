@@ -3,15 +3,16 @@ import ReactDOM from "react-dom";
 import Routes from "routes";
 import TopBar  from 'components/TopBar'
 import { BrowserRouter } from "react-router-dom";
+import {CurrentUserProvider} from 'contexts/currentUser'
 
 const App = () => {
   return (
-    <div>
+    <CurrentUserProvider>
       <BrowserRouter>
         <TopBar/>
         <Routes />
       </BrowserRouter>
-    </div>
+    </CurrentUserProvider>
   );
 };
 
